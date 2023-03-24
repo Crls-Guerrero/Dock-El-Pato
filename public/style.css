@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root{
+    --bg-color:#D5E1EF;
+    --font-color-text:#E4C654;
+    --font-color-links:#000;
+    --font-color-title:#FF9159;
+    /* 6C63FF */
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none ;
+}
+html{
+    scroll-behavior: smooth;
+}
+.view{
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-color);
+}
+header{
+    display: flex; 
+       
+    justify-content: space-evenly;    
+    padding: 16px 0;    
+    -webkit-box-shadow: 10px 0 5px -2px #888; 
+    box-shadow: 10px 0 5px -2px #888;
+    transition: all 0.8s ease; 
+}
+
+.icon-navbar{
+    display: flex;
+    align-content: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--font-color-title);   
+}
+.icon-navbar img{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    font-size: 1.1rem;
+    display: flex; 
+    align-items: center; 
+    gap: 2rem;       
+}
+
+.links-nav{
+    font-weight: 700;
+    color: var(--font-color-text);   
+}
+
+.links-nav:hover{
+    border-bottom: 2px solid var(--font-color-text); 
+}
+
+/* BURGUER */
+.menubar i{
+    color: var(--font-color-text);
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+#click{
+    display: none;
+}
+
+@media (max-width: 850px){
+
+    /* HEADER */
+    header{
+        gap: 30px;
+    }
+    .menubar i{
+        display: block;
+    }
+
+    label{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #click:checked ~ .menubar i:before{
+        content:"\f00d";  /* codigo de font awesome - icons*/
+    }
+
+    .nav{
+        position: fixed;
+        top: 90px;
+        left: -100%;        
+        height: 100vh;
+        width: 100%;
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        background-color: var(--bg-color);
+        transition: all 0.5s ease;   
+        z-index: 2;
+    }
+    #click:checked ~ nav{
+        left: 0;
+    }
+
+    .nav .links-nav{   
+        font-size: 1.3rem;     
+        display: block;
+        margin: 40px 0;
+    }   
+}
+
+
+/* HOME VIEW */
+.home{
+    display: flex;
+    align-items: center;    
+}
+.text-duck{
+    width: 100%;
+    height: calc(100vh - 96px); /* el 96px es el tamaño del navbar */
+    flex: 0 0 45%;  
+  /*   background-color: aquamarine;   */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    gap: 10px;
+}
+
+.text-gel h2{   
+    font-size: 4vw;
+    font-weight: 700;
+    text-align: left;
+    color: var(--font-color-text);
+}
+.text-duck span{
+    color: var(--font-color-title);
+}
+
+.links-duck{
+    padding: 10px;
+    border: 1px solid var(--font-color-title);
+    border-radius: 20px;
+    font-weight: 700;
+    color: var(--font-color-text);
+}
+.links-duck:hover{
+    color: var(--font-color-title);
+    background-color: var(--font-color-text);
+}
+
+.img-duck{
+    width: 100%;
+    height: calc(100vh - 96px); /* el 96px es el tamaño del navbar */
+    flex: 0 0 55%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.img-duck img{
+    max-width: 100%;
+    object-fit: contain;
+    cursor: pointer;       
+}
+
+@media (max-width: 850px){
+    /* HOME VIEW */
+    .home{
+        flex-direction: column;
+    }
+
+}
+
+/* Acerca de mí */
+.Acerca-de-mi{
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+}
+.about-img{
+    flex: 0 0 35%;  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+}
+.about-img img{
+    
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.linear{
+    flex: 0 0 4%;
+}
+.linear-separador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px;
+    gap: 14px;
+}
+.linear span{
+    width: 3px;
+    height: 80px;
+    background-color: #E4C654;
+   
+}
+
+.about-text{
+    flex: 0 0 51%;  
+    display: flex;    
+    align-items: center;
+}
+
+
+/* Habitad */
+.habitad{
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-color);
+}
+.habitad h1{
+    padding-top: 2rem;
+    font-size: 2vw;
+    color: var(--font-color-text);
+    text-align: center;
+    
+
+    
+}
